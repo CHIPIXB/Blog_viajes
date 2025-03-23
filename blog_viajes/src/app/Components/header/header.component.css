@@ -28,6 +28,13 @@ nav {
             align-content: center;
             margin: 10px;
             color: var(--verde-bosque);
+            transition: 1s;
+
+            &:hover {
+                background-color: var(--gris-roca);
+                color: var(--amarillo-sol);
+                border: 1px solid var(--amarillo-sol);
+            }
 
         }
     }
