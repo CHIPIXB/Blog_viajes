@@ -1,0 +1,31 @@
+.bg-image {
+    background-image: url(../../assets/images/bg-form.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    padding: 20px;
+
+
+    form {
+        width: 600px;
+    }
+
+    h2 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    h4 {
+        font-weight: bold;
+    }
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.616);
+    border: none;
+}
+
+.form-label {
+    margin-bottom: 15px;
+}
