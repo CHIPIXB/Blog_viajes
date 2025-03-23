@@ -1,6 +1,6 @@
 
 <div class="bg-image">
-    <div class="text-center">
+    <div class="text-center page">
         <div class="intro">
             <h2 class="mb-3">¡Comparte tu aventura con nosotros!</h2>
             <h4 class="mb-2">Aquí tienes tu espacio para contarnos esa historia inolvidable.</h4>
@@ -11,22 +11,29 @@
         </div>
           
         
-        <form class="m-auto">
+        <form class="m-auto" [formGroup]="formulario" (ngSubmit)="onSubmit()">
             <div class="mb-3">
                 <label class="form-label mb-3">¿Cómo llamamos a esta aventura?</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" formControlName="titulo">
+                @if (checkError('titulo', 'required')) {
+                    <p>Debes ponerle un título a tu historia</p>
+                }
             </div>
             <div class="mb-3">
                 <label class="form-label">Esto fue lo que pasó</label>
-                <textarea class="form-control" rows="6" placeholder="Cuéntanos tu historia..."></textarea>
+                <textarea class="form-control" rows="6" placeholder="Cuéntanos tu historia..." formControlName="texto"></textarea>
+                @if (formulario.get('texto')?.touched && formulario.get('texto')?.errors?.['minlength']) {
+                    <p>Tu historia es muy corta... ¡Queremos al menos 50 caracteres!</p>
+                  }
             </div>
             <div class="mb-3">
                 <label class="form-label">¿Nos muestras fotos?</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" formControlName="imagen">
+
             </div>
             <div class="mb-3">
                 <label class="form-label">¿Dónde sucede esta aventura?</label>
-                <select class="form-control">
+                <select class="form-control" formControlName="categoria">
                     <option>Elige una opción</option>
                     <option>Playa</option>
                     <option>Montaña</option>
@@ -34,12 +41,18 @@
                     <option>Festival</option>
                     <option>Rural</option>
                 </select>
+                @if (formulario.get('categoria')?.touched && formulario.get('categoria')?.invalid) {
+                    <p>¡Cuéntanos donde fue!</p>
+                }
             </div>
             <div class="mb-3">
                 <label class="form-label">Fecha de la aventura</label>
-                <input type="date" class="form-control">
+                <input type="date" class="form-control" formControlName="fecha_aventura">
+                @if (formulario.get('fecha_aventura')?.touched && formulario.get('fecha_aventura')?.invalid) {
+                    <p>Nos gustaría saber la fecha de tu aventura</p>
+                }
             </div>
-            <input type="submit" value="POST">
+            <input type="submit" value="POST" class="post">
         </form>
         
     </div>

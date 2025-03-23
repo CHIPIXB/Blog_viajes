@@ -1,7 +1,7 @@
 /* Variables colores */
 :root {
     --verde-bosque: #2f5233;
-    --verde-hoja: #4a7c59;
+    --verde-hoja: hsl(138, 25%, 39%);
     --verde-claro: #a3b18a;
 
     --marron-tierra: #5e3023;
@@ -11,6 +11,4 @@
     --amarillo-sol: #f2c14e;
     --gris-roca: #6b705c;
 
-    --texto-principal: #2f2f2f;
-    --fondo: #fafaf5;
 }

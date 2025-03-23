@@ -2,9 +2,10 @@ nav,
 ul {
     display: flex;
     flex-direction: row;
+    position: relative;
     width: 100%;
+    height: 50px;
     background-color: var(--verde-hoja);
-    height: 40px;
     align-items: center;
     color: var(--beige-claro);
 
