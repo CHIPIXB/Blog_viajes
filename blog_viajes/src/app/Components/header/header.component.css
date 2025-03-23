@@ -6,7 +6,7 @@ nav {
     font-weight: bold;
 
     i {
-        font-size: 125%;
+        font-size: 120%;
     }
 
     ul {
@@ -15,12 +15,13 @@ nav {
 
         h1 {
             align-content: center;
+            font-size: 45px;
         }
 
         li a {
             display: inline-block;
             width: 120px;
-            height: 80px;
+            height: 75px;
             background-color: var(--amarillo-sol);
             border-radius: 50%;
             text-align: center;

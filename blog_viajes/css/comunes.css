@@ -1,0 +1,10 @@
+/* estilos comunes a todas las paginas */
+h1 {
+    font-family: "Indie Flower", cursive;
+    ;
+}
+
+a,
+.copyright {
+    font-family: "Winky Sans", sans-serif;
+}
