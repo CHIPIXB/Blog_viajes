@@ -18,7 +18,8 @@ export class NewPostComponent {
       Validators.minLength(50)
     ]),
     imagen: new FormControl('', [
-      Validators.required
+      Validators.required,
+      Validators.pattern(/^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))$/i)
     ]),
     categoria: new FormControl('', [
       Validators.required
