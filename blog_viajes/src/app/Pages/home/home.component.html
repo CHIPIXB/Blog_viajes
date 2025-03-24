@@ -1,1 +1,22 @@
-<p>home works!</p>
+
+<div class="bg-image">
+    <div>
+        <h2>Todos nuestros posts</h2>
+        <p class="subtitulo">Explora relatos de viajes, festivales, naturaleza y más.</p>
+    </div>
+    
+    <section>
+        @for (post of arrPosts; track post.id) {
+          <article>
+            <img [src]="post.imagen"/>
+            <div class="contenido">
+              <h3>{{ post.titulo }}</h3>
+              <p class="categoria">{{ post.categoria }} | {{ post.fecha_aventura }}</p>
+              <p class="texto">{{ post.texto.slice(0, 400) }}...</p>
+              <a class="info">Leer más</a>
+            </div>
+          </article>
+        }
+      </section>
+</div>
+  

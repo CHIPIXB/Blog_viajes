@@ -11,7 +11,7 @@ nav {
     }
 
     ul {
-        background-color: var(--verde-bosque);
+        background-image: url(../../assets/images/marco-madera.webp);
         color: var(--beige-claro);
 
         h1 {
