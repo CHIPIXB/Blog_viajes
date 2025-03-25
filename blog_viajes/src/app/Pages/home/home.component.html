@@ -2,21 +2,26 @@
 <div class="bg-image">
     <div>
         <h2>Todos nuestros posts</h2>
-        <p class="subtitulo">Explora relatos de viajes, festivales, naturaleza y más.</p>
+        <p class="subtitulo">Descubre que vivieron nuestros seguidores</p>
     </div>
-    
+
     <section>
+      <div class="row d-flex justify-content-around">
         @for (post of arrPosts; track post.id) {
-          <article>
-            <img [src]="post.imagen"/>
-            <div class="contenido">
-              <h3>{{ post.titulo }}</h3>
-              <p class="categoria">{{ post.categoria }} | {{ post.fecha_aventura }}</p>
-              <p class="texto">{{ post.texto.slice(0, 400) }}...</p>
-              <a class="info">Leer más</a>
-            </div>
-          </article>
+          <div class="col-12 col-md-12 col-lg-6 col-xl-6 col-xxl-4">
+            <article>
+              <img [src]="post.imagen" />
+              <div class="contenido">
+                <h3>{{ post.titulo }}</h3>
+                <p class="categoria">{{ post.categoria }} | {{ post.fecha_aventura }}</p>
+                <p class="texto">{{ post.texto.slice(0, 200) }}...</p>
+                <a class="info">Leer más</a>
+              </div>
+            </article>
+          </div>
         }
-      </section>
+      </div>
+    </section>
+
 </div>
   
