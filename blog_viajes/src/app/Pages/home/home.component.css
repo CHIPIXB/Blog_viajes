@@ -1,6 +1,7 @@
 .bg-image {
     background-image: url(../../assets/images/bg-home\(3\).webp);
     background-size: cover;
+    /* padding: 0 20px; */
 }
 
 h2 {
@@ -16,15 +17,19 @@ h2 {
     font-size: 18px;
     margin-top: 30px;
     color: var(--marron-tierra);
+    margin-bottom: 50px;
 }
 
+section {
+    margin: 0 100px;
+}
 
 article {
     border: 20px solid;
     border-image: url('../../assets/images/marco-madera.webp')30;
     background-color: rgba(255, 255, 255, 0.596);
     border-radius: 0 300px;
-    margin: 20px;
+    /* margin: 20px; */
 }
 
 img {
@@ -34,13 +39,15 @@ img {
 }
 
 .contenido {
-    padding: 20px;
+    /* padding: 20px; */
 
     h3 {
+        min-height: 50px;
         font-size: 25px;
         margin-bottom: 10px;
         color: var(--marron-tierra);
-        text-align: center;
+        text-align: end;
+        margin: 10px 20px;
     }
 
     .categoria {
@@ -52,12 +59,17 @@ img {
 
     .texto {
         line-height: 1.5;
-        margin: 0 90px;
+        margin: 0px 20px 0px 90px;
+        text-align: justify;
+        height: 170px;
+
     }
 
     .info {
         color: var(--verde-bosque);
         font-weight: bold;
+        display: inline-block;
+        margin: 20px;
 
         &:hover {
             color: var(--amarillo-sol);
