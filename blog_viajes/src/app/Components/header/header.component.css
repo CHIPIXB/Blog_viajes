@@ -5,6 +5,7 @@ a {
 nav {
     align-content: center;
     font-weight: bold;
+    border-bottom: 3px solid var(--arena);
 
     i {
         font-size: 120%;
