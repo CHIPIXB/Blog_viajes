@@ -9,6 +9,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class NewPostComponent {
 
+
+
   formulario: FormGroup = new FormGroup({
     titulo: new FormControl('', [
       Validators.required

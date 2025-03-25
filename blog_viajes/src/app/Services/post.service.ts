@@ -93,5 +93,9 @@ export class NewPostService {
     return this.posts
   }
 
+  getPostById(id: number) {
+    return this.posts.find(post => post.id === id)
+  }
+
   constructor() { }
 }

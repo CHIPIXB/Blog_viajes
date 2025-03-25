@@ -1,0 +1,23 @@
+@if (post) {
+    <div class="col-12 col-md-12 col-lg-6 col-xl-6 col-xxl-4">
+        <article>
+          <img [src]="post.imagen" />
+          <div class="contenido">
+            <h3>{{ post.titulo }}</h3>
+            <p class="categoria">{{ post.categoria }} | {{ post.fecha_aventura }}</p>
+            <p class="texto">{{ post.texto.slice(0, 200) }}...</p>
+            <a class="info">Leer más</a>
+          </div>
+        </article>
+      </div>
+}
+
+
+
+
+
+
+
+
+
+
