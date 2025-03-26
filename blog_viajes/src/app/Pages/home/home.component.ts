@@ -1,5 +1,5 @@
 import { Component, inject, Input } from '@angular/core';
-import { NewPostService } from '../../Services/post.service';
+import { PostService } from '../../Services/post.service';
 import { RouterLink } from '@angular/router';
 import { Post } from '../../Interfaces/post';
 
@@ -11,10 +11,12 @@ import { Post } from '../../Interfaces/post';
 })
 export class HomeComponent {
 
-  private newPostService = inject(NewPostService)
+  private postService = inject(PostService)
 
 
-  arrPosts: Post[] = this.newPostService.getAllPost()
+  arrPosts: Post[] = this.postService.getAllPost()
+
+
 
 
 

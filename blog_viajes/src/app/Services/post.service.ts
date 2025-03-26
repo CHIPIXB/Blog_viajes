@@ -4,7 +4,7 @@ import { Post } from '../Interfaces/post';
 @Injectable({
   providedIn: 'root'
 })
-export class NewPostService {
+export class PostService {
 
   private posts: Post[] = [
     {
@@ -93,7 +93,7 @@ export class NewPostService {
     return this.posts
   }
 
-  getPostById(id: number) {
+  getById(id: number): Post | undefined {
     return this.posts.find(post => post.id === id)
   }
 

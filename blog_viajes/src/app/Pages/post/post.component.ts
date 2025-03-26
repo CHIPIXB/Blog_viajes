@@ -1,7 +1,6 @@
-import { Component, Inject, inject, Input } from '@angular/core';
-import { Post } from '../../Interfaces/post';
-import { ActivatedRoute, Router } from '@angular/router';
-import { NewPostService } from '../../Services/post.service';
+import { Component, inject, Input } from '@angular/core';
+import { PostService } from '../../Services/post.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-post',
@@ -11,8 +10,15 @@ import { NewPostService } from '../../Services/post.service';
 })
 export class PostComponent {
 
-  @Input() post: Post | undefined
-  postService = Inject(NewPostService)
+  @Input() idpost: string | undefined
+  postService = inject(PostService)
+
+
+  get post() {
+    return this.postService.getById(Number(this.idpost))
+  }
+
+
 
 }
 
