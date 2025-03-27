@@ -1,9 +1,10 @@
 /* estilos comunes a todas las paginas */
 h1,
 h2,
+h3,
 h4 {
     font-family: "Indie Flower", cursive;
-    ;
+    font-weight: bold;
 }
 
 a,
