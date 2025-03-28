@@ -39,7 +39,7 @@ export class NewPostComponent {
     if (this.formulario.valid) {
       const response = this.formulario.value;
       this.postService.addPost(response);
-      this.router.navigateByUrl('/posts');
+      this.router.navigateByUrl('/home');
     } else {
       console.log('error')
     }
