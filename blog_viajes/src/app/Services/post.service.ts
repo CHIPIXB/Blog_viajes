@@ -97,5 +97,9 @@ export class PostService {
     return this.posts.find(post => post.id === id)
   }
 
+  addPost(post: Post) {
+    return this.posts.push(post)
+  }
+
   constructor() { }
 }
