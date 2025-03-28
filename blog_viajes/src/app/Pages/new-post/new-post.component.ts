@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PostService } from '../../Services/post.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-post',
@@ -9,7 +11,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class NewPostComponent {
 
-
+  postService = inject(PostService)
+  router = inject(Router)
 
   formulario: FormGroup = new FormGroup({
     titulo: new FormControl('', [
@@ -33,8 +36,15 @@ export class NewPostComponent {
 
 
   onSubmit() {
-    throw new Error('Method not implemented.');
+    if (this.formulario.valid) {
+      const response = this.formulario.value;
+      this.postService.addPost(response);
+      this.router.navigateByUrl('/posts');
+    } else {
+      console.log('error')
+    }
   }
+
 
   checkError(field: string, validator: string): boolean | undefined {
     return this.formulario.get(field)?.hasError(validator) && this.formulario.get(field)?.touched
