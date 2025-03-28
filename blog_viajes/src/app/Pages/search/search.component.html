@@ -7,15 +7,12 @@
         </button>
         }
     </div>
-
+    
     <div class="titulo">
         <button class="boton w-25" (click)="ordenarPorTitulo()">
         Ordenar por título {{ ordenAscendente ? 'A-Z' : 'Z-A' }}
       </button>
     </div>
-
-  
-
 
   <div class="posts-container">
     @for (post of postsFiltrados; track post.id) {
