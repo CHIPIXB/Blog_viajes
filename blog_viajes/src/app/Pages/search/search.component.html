@@ -1,1 +1,42 @@
-<p>search works!</p>
+<section class="filtros">
+    <h4>Filtrar por: </h4>
+    <div class="categorias">
+        @for (categoria of categorias; track categoria) {
+        <button class="boton" (click)="filtrarPorCategoria(categoria)">
+            {{ categoria }}
+        </button>
+        }
+    </div>
+
+    <div class="titulo">
+        <button class="boton w-25" (click)="ordenarPorTitulo()">
+        Ordenar por título {{ ordenAscendente ? 'A-Z' : 'Z-A' }}
+      </button>
+    </div>
+
+  
+
+
+  <div class="posts-container">
+    @for (post of postsFiltrados; track post.id) {
+        <article class="container">
+            <h3 class="animate__animated animate__fadeInDown">{{ post.titulo }}</h3>
+            <div class="info">
+              <figure>
+                <img class=" animate__animated animate__bounceInLeft" [src]="post.imagen" />
+                <div class="d-flex justify-content-around animate__animated animate__flipInX">
+                  <p class="categoria">{{ post.categoria }}</p>
+                  <p class="fecha"> {{ post.fecha_aventura }}</p>
+                </div>
+              </figure>
+              <div class="contenido">
+                <p class="texto animate__animated animate__bounceInRight">{{ post.texto }}</p>
+              </div>
+            </div>
+          </article>
+    }
+    </div>
+</section>
+
+  
+  
