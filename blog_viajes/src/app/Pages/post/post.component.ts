@@ -15,16 +15,9 @@ export class PostComponent {
   postService = inject(PostService)
   post: Post | undefined
 
-
-  // get post() {
-  //   return this.postService.getById(Number(this.idpost))
-  // }
-
   ngOnInit() {
     this.post = this.postService.getById(Number(this.idpost))
   }
-
-
 
 }
 
