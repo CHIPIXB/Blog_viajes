@@ -1,17 +1,17 @@
 .bg-image {
     background-image: url(../../assets/images/bg-form.webp);
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
-    padding: 30px;
+    padding: 1px;
 
     form {
-        width: 600px;
+        padding: 0 50px;
+
 
         p {
-            margin: 5px;
             color: rgb(255, 77, 45);
         }
+
     }
 
     h2 {
@@ -56,11 +56,6 @@
     transition: 0.5s;
     font-weight: bold;
 
-    &:hover {
-        background-color: var(--amarillo-sol);
-        border-radius: 50%;
-        color: var(--verde-bosque);
-    }
 }
 
 .error {
@@ -68,4 +63,5 @@
     margin: 5px 0;
     color: rgb(255, 77, 45);
     font-size: 0.9em;
+
 }
