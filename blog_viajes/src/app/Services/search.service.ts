@@ -10,8 +10,8 @@ export class SearchService {
   private postService = inject(PostService)
   post: Post[] = []
 
-  filtrarPorCategoria(categoria: string) {
-    return this.postService.getAllPost().filter(post => post.categoria === categoria);
+  getByCategory(cat: string) {
+    return this.postService.getAll().filter(post => post.categoria === cat);
   }
 
   todasCategorias() {

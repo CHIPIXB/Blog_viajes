@@ -65,7 +65,7 @@ export class PostService {
     }
   ];
 
-  getAllPost(): Post[] {
+  getAll(): Post[] {
     return this.posts
   }
 
@@ -73,10 +73,9 @@ export class PostService {
     return this.posts.find(post => post.id === id)
   }
 
-  addPost(post: Post) {
+  insert(post: Post) {
     return this.posts.push(post)
   }
 
 
-  constructor() { }
 }
