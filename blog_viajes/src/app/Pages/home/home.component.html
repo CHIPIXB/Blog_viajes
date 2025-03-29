@@ -5,12 +5,12 @@
         <p class="subtitulo">Descubre que vivieron nuestros seguidores</p>
     </div>
 
-    <section>
+    <section class="container">
       <div class="row g-4">
         @for (post of arrPosts; track post.id) {
           <div class="col-12 col-md-12 col-lg-6 col-xl-6 col-xxl-4">
             <article>
-              <img [src]="post.imagen" />
+              <img class="object-fit-cover" [src]="post.imagen" />
               <div class="contenido">
                 <h3>{{ post.titulo }}</h3>
                 <p class="categoria">{{ post.categoria }} | {{ post.fecha_aventura }}</p>
@@ -24,4 +24,4 @@
     </section>
 
 </div>
-  
+

@@ -1,13 +1,12 @@
 .bg-image {
     background-image: url(../../assets/images/bg-home\(3\).webp);
     background-size: cover;
-    /* padding: 0 20px; */
 }
 
 h2 {
     text-align: center;
-    font-size: 50px;
-    padding-top: 40px;
+    font-size: 40px;
+    padding-top: 20px;
     font-weight: bold;
     color: var(--verde-bosque);
 }
@@ -15,65 +14,69 @@ h2 {
 .subtitulo {
     text-align: center;
     font-size: 18px;
-    margin-top: 30px;
+    margin-top: 10px;
     color: var(--marron-tierra);
     margin-bottom: 50px;
 }
 
-section {
-    margin: 0 100px;
-}
-
 article {
-    border: 20px solid;
+    border: 10px solid;
     border-image: url('../../assets/images/marco-madera.webp')30;
-    background-color: rgba(255, 255, 255, 0.596);
-    border-radius: 0 300px;
-    /* margin: 20px; */
+    background-color: rgba(255, 255, 255, 0.466);
+    transition: 1s;
+
+    &:hover {
+        border-radius: 0 100px;
+        background-color: rgba(255, 255, 255, 0.685);
+    }
 }
 
 img {
     width: 100%;
     height: 300px;
-    object-fit: cover;
 }
 
 .contenido {
-    /* padding: 20px; */
+    padding: 0 20px;
+
+    &:hover {
+        .info {
+            color: var(--verde-hoja);
+            cursor: pointer;
+        }
+    }
 
     h3 {
         min-height: 50px;
+        align-content: center;
         font-size: 25px;
-        margin-bottom: 10px;
+        margin: 10px 0;
         color: var(--marron-tierra);
         text-align: end;
-        margin: 10px 20px;
     }
 
     .categoria {
-        margin: 0 90px;
+        text-align: end;
         color: var(--gris-roca);
         font-style: italic;
         margin-bottom: 15px;
+        align-content: center;
     }
 
     .texto {
-        line-height: 1.5;
-        margin: 0px 20px 0px 90px;
+        line-height: 1.2;
         text-align: justify;
-        height: 170px;
-
+        min-height: 100px;
     }
 
     .info {
         color: var(--verde-bosque);
         font-weight: bold;
         display: inline-block;
-        margin: 20px;
+        margin: 20px 0;
 
         &:hover {
-            color: var(--amarillo-sol);
-            cursor: pointer;
+            color: var(--verde-claro);
         }
     }
 }
