@@ -3,11 +3,10 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    min-height: 50px;
-    background-color: var(--verde-hoja);
+    min-height: 43px;
+    background-image: url(../../assets/images/marco-madera.webp);
     align-items: center;
     color: var(--beige-claro);
-    padding: 5px 0;
 
 
     i {

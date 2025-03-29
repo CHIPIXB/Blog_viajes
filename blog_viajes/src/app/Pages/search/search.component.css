@@ -1,5 +1,7 @@
 .bg-image {
-    background-image: url(../../assets/images/bg-search.png);
+    background-image: url(../../assets/images/bg-form.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 h3 {
@@ -22,7 +24,7 @@ h3 {
 }
 
 .contenido {
-    margin: 20px;
+    margin: 30px;
     line-height: 1.8;
     align-content: center;
     text-align: justify;
@@ -46,12 +48,12 @@ article {
     font-size: 20px;
     margin: auto;
     max-width: 1004px;
-    min-height: calc(100vh - 160px);
-
+    min-height: calc(100vh - 143px);
 }
 
 
 /* botones de filtrado */
+
 .categorias .boton {
     font-weight: bold;
     display: inline-block;

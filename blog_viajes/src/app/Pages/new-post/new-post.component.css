@@ -2,6 +2,7 @@
     background-image: url(../../assets/images/bg-form.webp);
     background-size: cover;
     background-position: center;
+    min-height: calc(100vh - 118px);
 
 
     form {
@@ -47,6 +48,7 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     padding: 25px;
     margin: 0 auto;
+
 }
 
 .post {
