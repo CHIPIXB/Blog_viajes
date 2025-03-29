@@ -21,7 +21,7 @@ export class SearchComponent {
   }
 
   filtrarPorCategoria(categoria: string) {
-    this.postsFiltrados = this.searchService.filtrarPorCategoria(categoria)
+    this.postsFiltrados = this.searchService.getByCategory(categoria)
   }
 
   ordenarPorTitulo() {
