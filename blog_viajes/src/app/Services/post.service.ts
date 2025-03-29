@@ -65,8 +65,15 @@ export class PostService {
     }
   ];
 
+
+  constructor() {
+    const posts = localStorage.getItem('posts')
+    this.posts = posts ? JSON.parse(posts) : [this.posts]
+  }
+
   getAll(): Post[] {
-    return this.posts
+    const posts = localStorage.getItem('posts')
+    return this.posts = posts ? JSON.parse(posts) : this.posts
   }
 
   getById(id: number): Post | undefined {
@@ -77,6 +84,7 @@ export class PostService {
     const newId = this.posts.length > 0 ? this.posts[this.posts.length - 1].id : 0
     post.id = newId + 1
     this.posts.push(post)
+    localStorage.setItem('posts', JSON.stringify(this.posts))
   }
 
 }
