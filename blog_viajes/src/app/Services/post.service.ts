@@ -74,8 +74,9 @@ export class PostService {
   }
 
   insert(post: Post) {
-    return this.posts.push(post)
+    const newId = this.posts.length > 0 ? this.posts[this.posts.length - 1].id : 0
+    post.id = newId + 1
+    this.posts.push(post)
   }
-
 
 }

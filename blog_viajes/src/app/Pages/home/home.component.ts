@@ -13,11 +13,7 @@ export class HomeComponent {
 
   private postService = inject(PostService)
 
-
   arrPosts: Post[] = this.postService.getAll()
-
-
-
 
 
 }
