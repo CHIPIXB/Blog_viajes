@@ -45,12 +45,12 @@
             <div class="mb-1">
                 <label class="form-label">¿Dónde sucede esta aventura?</label>
                 <select class="form-control" formControlName="categoria">
-                    <option>Elige una opción</option>
-                    <option>Playa</option>
-                    <option>Montaña</option>
-                    <option>Ciudad</option>
-                    <option>Festival</option>
-                    <option>Rural</option>
+                    <option value="">Elige una opción</option>
+                    <option value="playa">Playa</option>
+                    <option value="montaña">Montaña</option>
+                    <option value="ciudad">Ciudad</option>
+                    <option value="festival">Festival</option>
+                    <option value="rural">Rural</option>
                 </select>
                 <div class="error">
                     @if (formulario.get('categoria')?.touched && formulario.get('categoria')?.invalid) {
