@@ -1,21 +1,23 @@
 <nav>
-    <ul class="d-flex list-unstyled justify-content-around">
-
-        <li>
-            <a [routerLink]="['/search']"><i class="fa-solid fa-magnifying-glass"></i> SEARCH</a>
-        </li>
-        <li>
-            <a><i class="fa-solid fa-book-open"></i> CONSEJOS</a>
-        </li>
-
+    <div class="container d-flex justify-content-between">
         <H1>CUÉNTAME TU VIAJE</H1>
 
-        <li>
-            <a [routerLink]="['/home']"><i class="fa-solid fa-house-chimney"></i> HOME</a>
-        </li>
-        <li>
-            <a [routerLink]="['/newpost']"><i class="fa-solid fa-pen-nib"></i> POST</a>
-        </li>
-        
-    </ul>
+        <ul class="d-flex list-unstyled justify-content-around">
+    
+            <li>
+                <a [routerLink]="['/search']"><i class="fa-solid fa-magnifying-glass"></i> SEARCH</a>
+            </li>
+    
+            <li>
+                <a [routerLink]="['/home']"><i class="fa-solid fa-house-chimney"></i> HOME</a>
+            </li>
+    
+            <li>
+                <a [routerLink]="['/newpost']"><i class="fa-solid fa-pen-nib"></i> POST</a>
+            </li>
+            
+        </ul>
+    </div>
+   
+
 </nav>

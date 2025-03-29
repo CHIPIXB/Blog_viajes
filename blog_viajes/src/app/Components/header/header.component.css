@@ -4,24 +4,24 @@ a {
 }
 
 nav {
+    background-image: url(../../assets/images/marco-madera.webp);
     align-content: center;
     font-weight: bold;
     border-bottom: 3px solid var(--arena);
+    color: var(--beige-claro);
+    height: 100px;
+
+    h1 {
+        text-align: center;
+        align-content: center;
+        font-size: 45px;
+    }
 
     i {
         font-size: 120%;
     }
 
     ul {
-        background-image: url(../../assets/images/marco-madera.webp);
-        color: var(--beige-claro);
-        height: 100px;
-
-
-        h1 {
-            align-content: center;
-            font-size: 45px;
-        }
 
         li {
 
@@ -47,5 +47,54 @@ nav {
             }
         }
     }
+
+}
+
+.hamburguesa {
+    display: none;
+
+    div {
+        width: 35px;
+        height: 4px;
+        margin: 5px 0;
+        background-color: var(--beige-claro);
+        border-radius: 10px;
+
+
+    }
+}
+
+@media (max-width:992px) {
+    nav {
+        height: 200px;
+    }
+
+    nav>div {
+        flex-direction: column;
+
+        ul {
+            margin-top: 20px;
+        }
+    }
+}
+
+@media (max-width:567px) {
+
+    nav {
+        height: 350px;
+        text-align: center;
+
+        ul {
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            li {
+                a {
+                    width: 400px;
+                }
+            }
+        }
+    }
+
 
 }
