@@ -1,6 +1,5 @@
 <div class="bg-image">
   <section class="filtros">
-    <h4>Filtrar por: </h4>
     <div class="categorias">
         @for (categoria of categorias; track categoria) {
         <button class="boton" (click)="filtrarPorCategoria(categoria)">
@@ -28,7 +27,8 @@
                 </div>
               </figure>
               <div class="contenido">
-                <p class="texto animate__animated animate__bounceInRight">{{ post.texto }}</p>
+                <p class="texto animate__animated animate__bounceInRight">{{ post.texto.slice(0, 100)}}...</p>
+                <a class="boton" [routerLink]="['/post', post.id]">~Ir al blog~</a>
               </div>
             </div>
           </article>

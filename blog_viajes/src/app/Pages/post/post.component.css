@@ -1,6 +1,6 @@
 .bg-image {
     background-image: url(../../assets/images/new-post-bg.png);
-    min-height: calc(100vh - 150px);
+    min-height: calc(100vh - 160px);
     align-content: center;
 
 }
