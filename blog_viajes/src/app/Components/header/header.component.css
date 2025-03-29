@@ -39,8 +39,8 @@ nav {
                 transition: 0.5s;
 
                 &:hover {
-                    background-color: var(--arena);
-                    border-radius: 50%;
+                    background-color: var(--verde-bosque);
+                    color: var(--amarillo-sol);
                 }
 
             }
