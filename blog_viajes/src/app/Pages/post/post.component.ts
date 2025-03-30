@@ -12,9 +12,10 @@ import Swal from 'sweetalert2';
 })
 export class PostComponent {
 
-  @Input() idpost: string | undefined
-  postService = inject(PostService)
+  @Input() idpost: number | undefined
   post: Post | undefined
+
+  private postService = inject(PostService)
   private router = inject(Router)
 
   ngOnInit() {
@@ -38,14 +39,10 @@ export class PostComponent {
           title: "Borrado con éxito",
           text: "Tu blog se ha borrado",
           icon: "success"
-        });
+        })
       }
-    });
+    })
   }
-
-
-
-
 
 }
 

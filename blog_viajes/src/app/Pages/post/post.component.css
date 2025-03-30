@@ -1,27 +1,27 @@
 .bg-image {
     background-image: url(../../assets/images/new-post-bg.png);
-    min-height: calc(100vh - 160px);
+    min-height: calc(100vh - 10rem);
     align-content: center;
 }
 
 h3 {
     text-align: center;
-    font-size: 40px;
-    margin: 30px;
+    font-size: 2.5rem;
+    margin: 1.875rem;
 }
 
 .info {
     display: flex;
 
     img {
-        width: 500px;
-        margin: 20px;
+        width: 31.25rem;
+        margin: 1.25rem;
 
     }
 }
 
 .contenido {
-    margin: 20px;
+    margin: 1.25rem;
     line-height: 1.8;
     align-content: center;
     text-align: justify;
@@ -32,18 +32,18 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 30px;
+    margin-top: 1.875rem;
 
     a {
         display: inline-block;
-        width: 120px;
-        height: 40px;
+        width: 7.5rem;
+        height: 2.5rem;
         background-color: var(--amarillo-sol);
-        border-radius: 12px;
+        border-radius: 0.75rem;
         text-align: center;
         align-content: center;
         cursor: pointer;
-        margin: 10px;
+        margin: 0.625rem;
         color: var(--verde-bosque);
         transition: 0.5s;
 
@@ -82,11 +82,11 @@ nav {
 @media (max-width:567px) {
     .info {
         img {
-            width: 300px;
+            width: 18.75rem;
         }
     }
 
     h3 {
-        min-height: 100px;
+        min-height: 6.25rem;
     }
 }
