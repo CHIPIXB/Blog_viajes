@@ -8,7 +8,9 @@ export const routes: Routes = [
     { path: "", pathMatch: 'full', redirectTo: 'home' },
     { path: "post/:idpost", component: PostComponent },
     { path: "newpost", component: NewPostComponent },
+    { path: "update/:idpost", component: NewPostComponent },
     { path: "home", component: HomeComponent },
     { path: "search", component: SearchComponent },
+
     { path: "**", redirectTo: 'normas' }
 ];
