@@ -2,11 +2,11 @@
     background-image: url(../../assets/images/bg-form.webp);
     background-size: cover;
     background-position: center;
-    min-height: calc(100vh - 118px);
+    min-height: calc(100vh - 7.375rem);
 
 
     form {
-        padding: 0 50px;
+        padding: 0 3.125rem;
 
 
         p {
@@ -16,7 +16,7 @@
     }
 
     h2 {
-        font-size: 30px;
+        font-size: 1.875rem;
         font-weight: bold;
     }
 
@@ -36,25 +36,25 @@
 }
 
 .form-label {
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
 }
 
 .page {
-    max-width: 700px;
-    margin: 80px auto;
+    max-width: 43.75rem;
+    margin: 5rem auto;
     background-color: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(15px);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    padding: 25px;
+    backdrop-filter: blur(0.9375rem);
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+    padding: 1.5625rem;
     margin: 0 auto;
 
 }
 
 .post {
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     background-color: var(--verde-bosque);
-    border-radius: 10px;
+    border-radius: 0.625rem;
     color: var(--amarillo-sol);
     transition: 0.5s;
     font-weight: bold;
@@ -63,7 +63,7 @@
 
 .error {
     min-height: 1.2rem;
-    margin: 5px 0;
+    margin: 0.3125rem 0;
     color: rgb(255, 77, 45);
     font-size: 0.9em;
 

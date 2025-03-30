@@ -28,6 +28,8 @@
                       <p>¡Venga! Cuéntanos tu historia</p>
                     } @else if (formulario.get('texto')?.touched && formulario.get('texto')?.errors?.['minlength']) {
                       <p>Tu historia es muy corta... ¡Queremos al menos 50 caracteres!</p>
+                    } @else if (formulario.get('texto')?.touched && formulario.get('texto')?.errors?.['maxlength']) {
+                      <p>El límite de caracteres es 500</p>
                     }
                 </div>
             </div>

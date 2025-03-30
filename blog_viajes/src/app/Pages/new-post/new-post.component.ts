@@ -16,8 +16,8 @@ export class NewPostComponent {
   private router = inject(Router)
   private route = inject(ActivatedRoute)
 
-  uptade = false
-  uptadeId: number | undefined
+  update = false
+  updateId: number | undefined
 
   existPost: Post | undefined
 
@@ -28,7 +28,8 @@ export class NewPostComponent {
     ]),
     texto: new FormControl('', [
       Validators.required,
-      Validators.minLength(50)
+      Validators.minLength(50),
+      Validators.maxLength(300)
     ]),
     imagen: new FormControl('', [
       Validators.required,
@@ -44,20 +45,20 @@ export class NewPostComponent {
 
 
   ngOnInit() {
-    const idRoute = this.route.snapshot.paramMap.get('idpost');
+    const idRoute = this.route.snapshot.paramMap.get('idpost')
     if (idRoute) {
-      const existPost = this.postService.getById(Number(idRoute));
+      const existPost = this.postService.getById(Number(idRoute))
       if (existPost) {
-        this.existPost = existPost;
-        this.uptade = true;
-        this.uptadeId = existPost.id;
+        this.existPost = existPost
+        this.update = true
+        this.updateId = existPost.id
         this.formulario.patchValue({
           titulo: existPost.titulo,
           texto: existPost.texto,
           imagen: existPost.imagen,
           categoria: existPost.categoria,
           fecha_aventura: existPost.fecha_aventura
-        });
+        })
       }
     }
   }
@@ -65,22 +66,22 @@ export class NewPostComponent {
 
   onSubmit() {
     if (this.formulario.valid) {
-      const datos = this.formulario.value;
+      const datos = this.formulario.value
 
-      if (this.uptade && this.existPost) {
+      if (this.update && this.existPost) {
         this.postService.updatePost({
           id: this.existPost.id,
-          titulo: this.formulario.value.titulo,
-          texto: this.formulario.value.texto,
-          imagen: this.formulario.value.imagen,
-          categoria: this.formulario.value.categoria,
-          fecha_aventura: this.formulario.value.fecha_aventura
-        });
+          titulo: datos.titulo,
+          texto: datos.texto,
+          imagen: datos.imagen,
+          categoria: datos.categoria,
+          fecha_aventura: datos.fecha_aventura
+        })
       } else {
-        this.postService.insert(datos);
+        this.postService.insert(datos)
       }
 
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/home')
     }
   }
 
