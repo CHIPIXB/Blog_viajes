@@ -69,7 +69,6 @@ export class PostService {
   constructor() {
     const posts = localStorage.getItem('posts')
     this.posts = posts ? JSON.parse(posts) : this.posts
-    console.log(this.posts)
   }
 
   getAll(): Post[] {
@@ -86,5 +85,20 @@ export class PostService {
     this.posts.push(post)
     localStorage.setItem('posts', JSON.stringify(this.posts))
   }
+
+  deletePost(id: number) {
+    this.posts = this.posts.filter(post => post.id !== id)
+    localStorage.setItem('posts', JSON.stringify(this.posts))
+  }
+
+  updatePost(postUpdating: Post) {
+    const index = this.posts.findIndex(post => post.id === postUpdating.id)
+    if (index !== -1) {
+      this.posts[index] = postUpdating
+      localStorage.setItem('posts', JSON.stringify(this.posts))
+    }
+  }
+
+
 
 }
