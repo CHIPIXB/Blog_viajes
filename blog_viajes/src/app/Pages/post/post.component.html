@@ -9,6 +9,11 @@
             <p class="categoria">{{ post.categoria }}</p>
             <p class="fecha"> {{ post.fecha_aventura }}</p>
           </div>
+          <nav>
+            <a [routerLink]="['/home']">Volver</a>
+            <a [routerLink]="['/update', post.id]">Editar</a>
+            <a class="delete" (click)="delete()">Eliminar</a>
+          </nav>
         </figure>
         <div class="contenido">
           <p class="texto animate__animated animate__bounceInRight">{{ post.texto }}</p>
