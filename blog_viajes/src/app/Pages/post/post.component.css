@@ -30,6 +30,31 @@ h3 {
     font-style: italic;
 }
 
+nav {
+    display: flex;
+    flex-direction: row;
+
+    a {
+        display: inline-block;
+        width: 120px;
+        height: 40px;
+        background-color: var(--amarillo-sol);
+        border-radius: 12px;
+        text-align: center;
+        align-content: center;
+        margin: 10px;
+        color: var(--verde-bosque);
+        transition: 0.5s;
+
+        &:hover {
+            background-color: var(--verde-bosque);
+            color: var(--amarillo-sol);
+        }
+
+    }
+}
+
+
 
 @media (max-width:1200px) {
     .info {
