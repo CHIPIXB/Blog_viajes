@@ -11,11 +11,11 @@ export class SearchService {
   post: Post[] = []
 
   getByCategory(cat: string) {
-    return this.postService.getAll().filter(post => post.categoria === cat);
+    return this.postService.getAll().filter(post => post.categoria === cat)
   }
 
   todasCategorias() {
-    return ['playa', 'montaña', 'ciudad', 'festival', 'rural'];
+    return ['playa', 'montaña', 'ciudad', 'festival', 'rural']
   }
 
 }

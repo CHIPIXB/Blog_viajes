@@ -63,12 +63,23 @@ export class PostService {
       categoria: 'rural',
       fecha_aventura: '24-10-2024'
     }
-  ];
+  ]
 
 
   constructor() {
     const posts = localStorage.getItem('posts')
-    this.posts = posts ? JSON.parse(posts) : this.posts
+
+    if (posts) {
+      try {
+        this.posts = JSON.parse(posts)
+      } catch (error) {
+        localStorage.removeItem('posts')
+      }
+    }
+  }
+
+  actualizarStorage() {
+    localStorage.setItem('posts', JSON.stringify(this.posts));
   }
 
   getAll(): Post[] {
@@ -83,22 +94,21 @@ export class PostService {
     const newId = this.posts.length > 0 ? this.posts[this.posts.length - 1].id : 0
     post.id = newId + 1
     this.posts.push(post)
-    localStorage.setItem('posts', JSON.stringify(this.posts))
+    this.actualizarStorage()
   }
 
   deletePost(id: number) {
     this.posts = this.posts.filter(post => post.id !== id)
-    localStorage.setItem('posts', JSON.stringify(this.posts))
+    this.actualizarStorage()
   }
 
   updatePost(postUpdating: Post) {
     const index = this.posts.findIndex(post => post.id === postUpdating.id)
     if (index !== -1) {
       this.posts[index] = postUpdating
-      localStorage.setItem('posts', JSON.stringify(this.posts))
+      this.actualizarStorage()
     }
   }
-
 
 
 }
