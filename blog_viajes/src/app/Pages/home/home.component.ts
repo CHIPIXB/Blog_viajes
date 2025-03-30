@@ -12,8 +12,10 @@ import { Post } from '../../Interfaces/post';
 export class HomeComponent {
 
   private postService = inject(PostService)
+  posts: Post[] = []
 
-  arrPosts: Post[] = this.postService.getAll()
-
+  ngOnInit() {
+    this.posts = this.postService.getAll()
+  }
 
 }
