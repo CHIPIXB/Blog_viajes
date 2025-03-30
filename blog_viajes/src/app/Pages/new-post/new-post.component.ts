@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PostService } from '../../Services/post.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Post } from '../../Interfaces/post';
 
 @Component({
   selector: 'app-new-post',
@@ -11,8 +12,15 @@ import { Router } from '@angular/router';
 })
 export class NewPostComponent {
 
-  postService = inject(PostService)
-  router = inject(Router)
+  private postService = inject(PostService)
+  private router = inject(Router)
+  private route = inject(ActivatedRoute)
+
+  uptade = false
+  uptadeId: number | undefined
+
+  existPost: Post | undefined
+
 
   formulario: FormGroup = new FormGroup({
     titulo: new FormControl('', [
@@ -35,18 +43,51 @@ export class NewPostComponent {
   })
 
 
-  onSubmit() {
-    if (this.formulario.valid) {
-      const response = this.formulario.value;
-      this.postService.insert(response);
-      this.router.navigateByUrl('/home');
-    } else {
-      console.log('error')
+  ngOnInit() {
+    const idRoute = this.route.snapshot.paramMap.get('idpost');
+    if (idRoute) {
+      const existPost = this.postService.getById(Number(idRoute));
+      if (existPost) {
+        this.existPost = existPost;
+        this.uptade = true;
+        this.uptadeId = existPost.id;
+        this.formulario.patchValue({
+          titulo: existPost.titulo,
+          texto: existPost.texto,
+          imagen: existPost.imagen,
+          categoria: existPost.categoria,
+          fecha_aventura: existPost.fecha_aventura
+        });
+      }
     }
   }
+
+
+  onSubmit() {
+    if (this.formulario.valid) {
+      const datos = this.formulario.value;
+
+      if (this.uptade && this.existPost) {
+        this.postService.updatePost({
+          id: this.existPost.id,
+          titulo: this.formulario.value.titulo,
+          texto: this.formulario.value.texto,
+          imagen: this.formulario.value.imagen,
+          categoria: this.formulario.value.categoria,
+          fecha_aventura: this.formulario.value.fecha_aventura
+        });
+      } else {
+        this.postService.insert(datos);
+      }
+
+      this.router.navigateByUrl('/home');
+    }
+  }
+
 
 
   checkError(field: string, validator: string): boolean | undefined {
     return this.formulario.get(field)?.hasError(validator) && this.formulario.get(field)?.touched
   }
 }
+
