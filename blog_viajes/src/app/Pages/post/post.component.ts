@@ -2,6 +2,7 @@ import { Component, inject, Input } from '@angular/core';
 import { PostService } from '../../Services/post.service';
 import { Post } from '../../Interfaces/post';
 import { Router, RouterLink } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-post',
@@ -21,9 +22,29 @@ export class PostComponent {
   }
 
   delete() {
-    this.postService.deletePost(Number(this.post?.id))
-    this.router.navigate(['/home'])
+    Swal.fire({
+      title: "¿Estás seguro de querer borrarlo?",
+      text: "Esta acción no se puede revertir",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "red",
+      cancelButtonColor: "#2f5233",
+      confirmButtonText: "Borrar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.postService.deletePost(Number(this.post?.id))
+        this.router.navigate(['/home'])
+        Swal.fire({
+          title: "Borrado con éxito",
+          text: "Tu blog se ha borrado",
+          icon: "success"
+        });
+      }
+    });
   }
+
+
+
 
 
 }

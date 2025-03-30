@@ -17,17 +17,17 @@
   <div class="posts-container">
     @for (post of postsFiltrados; track post.id) {
         <article class="container">
-            <h3 class="animate__animated animate__fadeInDown">{{ post.titulo }}</h3>
+            <h3>{{ post.titulo }}</h3>
             <div class="info">
               <figure>
-                <img class=" animate__animated animate__bounceInLeft" [src]="post.imagen" />
-                <div class="d-flex justify-content-around animate__animated animate__flipInX">
+                <img [src]="post.imagen" />
+                <div class="d-flex justify-content-around">
                   <p class="categoria">{{ post.categoria }}</p>
                   <p class="fecha"> {{ post.fecha_aventura }}</p>
                 </div>
               </figure>
               <div class="contenido">
-                <p class="texto animate__animated animate__bounceInRight">{{ post.texto.slice(0, 100)}}...</p>
+                <p>{{ post.texto.slice(0, 100)}}...</p>
                 <a class="boton" [routerLink]="['/post', post.id]">~Ir al blog~</a>
               </div>
             </div>
