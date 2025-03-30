@@ -11,6 +11,5 @@ export const routes: Routes = [
     { path: "update/:idpost", component: NewPostComponent },
     { path: "home", component: HomeComponent },
     { path: "search", component: SearchComponent },
-
     { path: "**", redirectTo: 'normas' }
 ];

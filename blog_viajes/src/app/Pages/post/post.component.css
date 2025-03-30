@@ -2,14 +2,12 @@
     background-image: url(../../assets/images/new-post-bg.png);
     min-height: calc(100vh - 160px);
     align-content: center;
-
 }
-
 
 h3 {
     text-align: center;
     font-size: 40px;
-    margin-bottom: 30px;
+    margin: 30px;
 }
 
 .info {
@@ -33,6 +31,8 @@ h3 {
 nav {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 30px;
 
     a {
         display: inline-block;
@@ -42,9 +42,11 @@ nav {
         border-radius: 12px;
         text-align: center;
         align-content: center;
+        cursor: pointer;
         margin: 10px;
         color: var(--verde-bosque);
         transition: 0.5s;
+
 
         &:hover {
             background-color: var(--verde-bosque);
@@ -52,9 +54,19 @@ nav {
         }
 
     }
+
+    .danger {
+        display: none;
+    }
+
+    .delete:hover {
+        background-color: red;
+
+        .danger {
+            display: block;
+        }
+    }
 }
-
-
 
 @media (max-width:1200px) {
     .info {

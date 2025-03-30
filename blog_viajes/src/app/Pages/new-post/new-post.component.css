@@ -68,3 +68,8 @@
     font-size: 0.9em;
 
 }
+
+input:disabled {
+    background-color: var(--gris-roca);
+    color: var(--verde-claro)
+}
