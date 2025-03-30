@@ -3,7 +3,7 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    min-height: 43px;
+    min-height: 2.6875rem;
     background-image: url(../../assets/images/marco-madera.webp);
     align-items: center;
     color: var(--beige-claro);
@@ -26,7 +26,7 @@ ul {
 }
 
 .iconos i {
-    width: 40px;
+    width: 2.5rem;
     height: auto;
     text-align: center;
     transition: 0.3s;
@@ -36,7 +36,7 @@ ul {
     }
 }
 
-@media (max-width:567px) {
+@media (max-width:35.4375rem) {
 
     nav,
     ul {
