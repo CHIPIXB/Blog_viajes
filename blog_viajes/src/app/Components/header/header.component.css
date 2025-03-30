@@ -6,14 +6,14 @@ nav {
     background-image: url(../../assets/images/marco-madera.webp);
     align-content: center;
     font-weight: bold;
-    border-bottom: 3px solid var(--arena);
+    border-bottom: 0.1875rem solid var(--arena);
     color: var(--beige-claro);
-    height: 100px;
+    height: 6.25rem;
 
     h1 {
         text-align: center;
         align-content: center;
-        font-size: 45px;
+        font-size: 2.8125rem;
     }
 
     i {
@@ -28,13 +28,13 @@ nav {
 
             a {
                 display: inline-block;
-                width: 120px;
-                height: 40px;
+                width: 7.5rem;
+                height: 2.5rem;
                 background-color: var(--amarillo-sol);
-                border-radius: 12px;
+                border-radius: 0.75rem;
                 text-align: center;
                 align-content: center;
-                margin: 10px;
+                margin: 0.625rem;
                 color: var(--verde-bosque);
                 transition: 0.5s;
 
@@ -53,11 +53,11 @@ nav {
     display: none;
 
     div {
-        width: 35px;
-        height: 4px;
-        margin: 5px 0;
+        width: 2.1875rem;
+        height: 0.25rem;
+        margin: 0.3125rem 0;
         background-color: var(--beige-claro);
-        border-radius: 10px;
+        border-radius: 0.625rem;
 
 
     }
@@ -65,14 +65,14 @@ nav {
 
 @media (max-width:992px) {
     nav {
-        height: 200px;
+        height: 12.5rem;
     }
 
     nav>div {
         flex-direction: column;
 
         ul {
-            margin-top: 20px;
+            margin-top: 1.25rem;
         }
     }
 }
@@ -80,16 +80,16 @@ nav {
 @media (max-width:567px) {
 
     nav {
-        height: 350px;
+        height: 21.875rem;
         text-align: center;
 
         ul {
             flex-direction: column;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
 
             li {
                 a {
-                    width: 300px;
+                    width: 18.75rem;
                 }
             }
         }
